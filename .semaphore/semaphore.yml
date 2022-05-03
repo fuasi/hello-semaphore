@@ -10,7 +10,7 @@ blocks:
       jobs:
         - name: go get & build
           commands:
-            - ssh -o StrictHostKeyChecking=no
+            - ssh -O StrictHostKeyChecking=no
             - ssh root@lanks.top
             - Dongkesi123
             - echo 1111
