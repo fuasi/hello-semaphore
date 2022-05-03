@@ -10,7 +10,7 @@ blocks:
       jobs:
         - name: go get & build
           commands:
-            - ssh -Y root@lanks.top
+            - ssh -o GSSAPIAuthentication=no root@lanks.top
             - Dongkesi123
             - echo 1111
 after_pipeline:
