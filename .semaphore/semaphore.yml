@@ -10,7 +10,7 @@ blocks:
       jobs:
         - name: go get & build
           commands:
-            - ssh -y root@lanks.top
+            - ssh -Y root@lanks.top
             - Dongkesi123
             - echo 1111
 after_pipeline:
