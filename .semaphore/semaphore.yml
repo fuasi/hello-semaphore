@@ -11,8 +11,8 @@ blocks:
         - name: go get & build
           commands:
             - ssh root@lanks.top
-            - Dongkesi123
             - 'yes'
+            - Dongkesi123
             - echo 1111
 after_pipeline:
   task:
