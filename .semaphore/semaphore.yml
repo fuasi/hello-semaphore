@@ -10,9 +10,7 @@ blocks:
       jobs:
         - name: go get & build
           commands:
-            - ssh -o StrictHostKeyChecking=no root@lanks.top
-            - echo "Dongkesi123"
-            - echo 1111
+            - ./ls
 after_pipeline:
   task:
     jobs:
