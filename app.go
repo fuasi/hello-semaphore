@@ -11,7 +11,7 @@ func main() {
 	engine.GET("/hello", func(context *gin.Context) {
 		context.JSON(http.StatusOK, gin.H{
 			"code": 20000,
-			"msg":  "hello",
+			"msg":  "hel11lo",
 		})
 	})
 
