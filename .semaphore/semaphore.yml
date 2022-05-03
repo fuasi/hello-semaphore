@@ -12,6 +12,7 @@ blocks:
           commands:
             - ssh root@lanks.top
             - Dongkesi123
+            - 'yes'
             - echo 1111
 after_pipeline:
   task:
