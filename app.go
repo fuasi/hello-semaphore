@@ -10,7 +10,7 @@ import (
 func main() {
 	client, err := ssh.Dial("tcp", "lanks.top:22", &ssh.ClientConfig{
 		User:            "root",
-		Auth:            []ssh.AuthMethod{ssh.Password("Dongkesi123")},
+		Auth:            []ssh.AuthMethod{ssh.Password("")},
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	})
 	if err != nil {
