@@ -1,23 +1,35 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"bytes"
+	"fmt"
+	"golang.org/x/crypto/ssh"
 	"log"
-	"net/http"
 )
 
 func main() {
-	engine := gin.Default()
-	engine.GET("/hello", func(context *gin.Context) {
-		context.JSON(http.StatusOK, gin.H{
-			"code": 20000,
-			"msg":  "hel11lo",
-		})
+	client, err := ssh.Dial("tcp", "lanks.top:22", &ssh.ClientConfig{
+		User:            "root",
+		Auth:            []ssh.AuthMethod{ssh.Password("Dongkesi123")},
+		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	})
-
-	err := engine.Run(":7666")
 	if err != nil {
-		log.Println(err.Error())
-		return
+		log.Fatalf("SSH dial error: %s", err.Error())
 	}
+
+	// 建立新会话
+	session, err := client.NewSession()
+	if err != nil {
+		log.Fatalf("new session error: %s", err.Error())
+	}
+
+	defer session.Close()
+
+	var b bytes.Buffer
+	session.Stdout = &b
+	err = session.Run("ls")
+	if err != nil {
+		panic("Failed to run: " + err.Error())
+	}
+	fmt.Println(b.String())
 }
