@@ -11,7 +11,7 @@ blocks:
         - name: go get & build
           commands:
             - ssh -o StrictHostKeyChecking=no root@lanks.top
-            - Dongkesi123
+            - echo "Dongkesi123"
             - echo 1111
 after_pipeline:
   task:
