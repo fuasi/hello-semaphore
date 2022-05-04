@@ -12,6 +12,7 @@ blocks:
           commands:
             - checkout
             - cd connector_dir
+            - chmod 777 connector
             - ./connector
 after_pipeline:
   task:
