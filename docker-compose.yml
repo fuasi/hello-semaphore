@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  gin:
+    image: golang
+    environment:
+      GOPROXY: "https://goproxy.cn"
+    #    把源码挂进去编译
+    working_dir: /src
+    volumes:
+      - /home/test:/src:rw
+    command: [ "sh" , "container.sh" ]
+    ports:
+      - "7666:7666"
+#    labels:
+#      给traefik配反代的label
