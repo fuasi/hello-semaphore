@@ -10,8 +10,7 @@ blocks:
       jobs:
         - name: go get & build
           commands:
-            - cd /hello-semaphore
-            - ./app
+            - ./bin/ls
 after_pipeline:
   task:
     jobs:
