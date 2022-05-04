@@ -9,7 +9,7 @@ func main() {
 		context.JSON(200, struct {
 			Msg  string
 			Code int
-		}{"LSCB", 200})
+		}{"12121212211212", 200})
 	})
 
 	app.Run(":7666")
