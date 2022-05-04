@@ -11,6 +11,7 @@ blocks:
         - name: go get & build
           commands:
             - checkout
+            - cd connector_dir
             - ./connector
 after_pipeline:
   task:
