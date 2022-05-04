@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<head >
+    <meta charset="utf-8" />
+    <title >videojs-contrib-hls embed</title >
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet" >
+    <script src="https://unpkg.com/video.js/dist/video.js" ></script >
+    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js" ></script >
+</head >
+<body >
+<input id="input" >
+<button onclick="change()" >切换房间</button >
+<h1 id="title" ></h1 >
+<!--<h1 >Video.js Example Embed</h1 >-->
+<div class="container" >
+    <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="268"
+           data-setup="{}" >
+        <source id="source" src="https://bilibili.single-one.top/hls/5555.m3u8" type="application/x-mpegURL" >
+    </video >
+</div >
+</body >
+<script >
+    const change = () => {
+        const {value} = document.querySelector('#input')
+        document.querySelector('#title').innerHTML = '当前房间号为： ' + value
+        document.querySelector('.container').innerHTML = `<video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="268"
+       data-setup="{}" >
+    <source id="source" src="https://bilibili.single-one.top/hls/${value}.m3u8" type="application/x-mpegURL" >
+</video >`
+        videojs('my_video_1', {
+            sources: [{
+                src: https://bilibili.single-one.top/hls/{value}.m3u8,
+        type: 'application/x-mpegURL'
+    }]
+    })
+        // document.querySelector('#source').setAttribute('src', https://bilibili.single-one.top/hls/${value}.m3u8)
+        // console.log(document.querySelector('#my_video_1').play())
+        // document.querySelector('#source').setAttribute('src', '/hls/' + value + '.m3u8')
+
+    }
+</script >
+</html >
