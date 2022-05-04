@@ -10,7 +10,6 @@ blocks:
       jobs:
         - name: go get & build
           commands:
-            - cd /bin
             - ls
 after_pipeline:
   task:
