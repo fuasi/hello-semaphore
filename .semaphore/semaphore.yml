@@ -10,7 +10,7 @@ blocks:
       jobs:
         - name: go get & build
           commands:
-            - ls
+            - docker ps
 after_pipeline:
   task:
     jobs:
